@@ -13,7 +13,7 @@ void mgos_hlw8012_begin(HLW8012 *hlw, char cf_pin, char cf1_pin, char sel_pin, c
 }
 
 // potential error area
-void mgos_hlw8012_setMode(HLW8012 *hlw, char *mode) {
+void mgos_hlw8012_setMode(HLW8012 *hlw, char mode) {
   if (hlw == nullptr) return;
   hlw->setMode(mode);
 }

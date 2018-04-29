@@ -79,7 +79,7 @@ double HLW8012::getCurrent() {
         _checkCF1Signal();
 
     } else if (_mode == _current_mode) {
-        _current_pulse_width = pulseIn(_cf1_pin, HIGH, _pulse_timeout);
+        _current_pulse_width = pulseInLong(_cf1_pin, HIGH, _pulse_timeout);
     }
 
     _current = (_current_pulse_width > 0) ? _current_multiplier / _current_pulse_width / 2 : 0;
@@ -101,7 +101,7 @@ unsigned int HLW8012::getActivePower() {
     if (_use_interrupts) {
         _checkCFSignal();
     } else {
-        _power_pulse_width = pulseIn(_cf_pin, HIGH, _pulse_timeout);
+        _power_pulse_width = pulseInLong(_cf_pin, HIGH, _pulse_timeout);
     }
     _power = (_power_pulse_width > 0) ? _power_multiplier / _power_pulse_width / 2 : 0;
     return _power;

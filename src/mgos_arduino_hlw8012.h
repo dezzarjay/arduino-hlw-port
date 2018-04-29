@@ -6,7 +6,6 @@
 #define ARDUINO_HLW8012_H_MGOS_ARDUINO_HLW8012_C_H
 
 #include "HLW8012.h"
-#include "Arduino.h"
 
 #ifdef __cplusplus
 extern "C" {

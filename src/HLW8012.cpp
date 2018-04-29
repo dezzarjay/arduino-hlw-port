@@ -91,7 +91,7 @@ unsigned int HLW8012::getVoltage() {
     if (_use_interrupts) {
         _checkCF1Signal();
     } else if (_mode != _current_mode) {
-        _voltage_pulse_width = pulseIn(_cf1_pin, HIGH, 2000000);
+        _voltage_pulse_width = pulseInLong(_cf1_pin, HIGH, _pulse_timeout);
     }
     _voltage = (_voltage_pulse_width > 0) ? _voltage_multiplier / _voltage_pulse_width / 2 : 0;
     return _voltage;

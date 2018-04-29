@@ -3,6 +3,6 @@
 //
 #include <stdbool.h>
 
-bool mgos_arduino_hlw8012_init(void) {
+bool mgos_arduino_hlw_init(void) {
     return true;
 }
